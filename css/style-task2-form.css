@@ -1,0 +1,304 @@
+:root {
+    --common-text-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.8),
+    0 -1px 0 rgba(189, 189, 189, 0.8);
+
+    --common-border: 1px solid #EBEBE9;
+    --common-box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.2),
+    0 1px 0 #fff;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, Tahoma, sans-serif;;
+}
+
+body {
+    margin: 0;
+    background: #e6e6e6;
+}
+
+.page {
+    width: 656px;
+    margin: 40px auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    text-shadow:  var(--common-text-shadow);
+}
+
+.page-header .please {
+    font-size: 13px;
+    color: #333;
+    text-shadow:  var(--common-text-shadow);
+    font-weight: 500;
+}
+
+.form-card {
+    background: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    box-shadow:
+        0 1px 0 #ddd,
+        0 3px 0 #ccc,
+        0 6px 10px rgba(0,0,0,.25);
+}
+
+.form-sections {
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    padding: 24px 138px 20px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+    text-shadow:  var(--common-text-shadow);
+}
+
+.section label {
+    font-size: 13px;
+    color: #333;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        ". header"
+        "label1 input1"
+        "label2 input2";
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    gap: 16px;
+}
+
+.grid-container h2 {
+    grid-area: header;
+}
+
+.grid-container label {
+    text-align: right;
+}
+
+.grid-container label:nth-of-type(1) {
+    grid-area: label1;
+}
+
+.grid-container label:nth-of-type(2) {
+    grid-area: label2;
+}
+
+.grid-container input[type="text"] {
+    grid-area: input1;
+    width: 100%;
+    height: 28px;
+    padding: 3px 6px;
+    font-size: 13px;
+    border: var(--common-border);
+    box-shadow: var(--common-box-shadow);
+}
+
+.grid-container input[type="color"] {
+    grid-area: input2;
+    width: 52px;
+    height: 32px;
+    padding: 2px;
+    background: none;
+    cursor: pointer;
+    border: var(--common-border);
+    box-shadow: var(--common-box-shadow);
+}
+
+.grid-container-yellow {
+    display: grid;
+    grid-template-areas:
+        ". header"
+        "label1 input1";
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+}
+
+.grid-container-yellow h2 {
+    grid-area: header;
+}
+
+.grid-container-yellow label {
+    margin-top: 3px;
+    text-align: right;
+    grid-area: label1;
+}
+
+.grid-container-yellow textarea {
+    grid-area: input1;
+    width: 100%;
+    height: 70px;
+    padding: 6px;
+    font-size: 13px;
+    resize: vertical;
+    border: var(--common-border);
+    box-shadow: var(--common-box-shadow);
+}
+
+.grid-container-controls {
+    display: grid;
+    grid-template-areas:
+        ". controls"
+        ". button";
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+    gap: 16px;
+}
+
+.controls {
+    grid-area: controls;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.radio-row label,
+.checkbox-row label {
+    line-height: 1.35;
+}
+
+.checkbox-row a {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+.submit-button {
+    grid-area: button;
+    display: block;
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to bottom, #8a6bff, #6a4ad8);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.7),
+        0 4px 8px rgba(0,0,0,0.5);
+    text-shadow: 
+        0 -2px 0 rgba(0,0,0,0.4),
+        0 1px 0 rgba(255,255,255,0.2);
+    transition: all 0.1s ease;
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+    box-shadow: 
+        inset 0 1px 3px rgba(0,0,0,0.3),
+        0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-yellow {
+    background: #fff7c4;
+    box-shadow:
+        inset 0 1px 0 #fff,
+        0 2px 4px rgba(0,0,0,.2);
+}
+
+.section-bottom {
+    padding-right: 166px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-row,
+.checkbox-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.radio-row {
+    
+    margin-bottom: 16px;
+}
+
+.radio-row input {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    border: 1px solid #333;
+}
+
+.checkbox-row .custom-checkbox {
+    display: inline-flex; 
+    align-items: flex-start; 
+    gap: 6px; 
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox .checkmark {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #EEE492;
+    border-radius: 25%; 
+    background-color: white;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background-color: #FFFACF;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    content: '\2713';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #84398C;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.custom-checkbox:hover .checkmark {
+    border-color: #d9d07a;
+}

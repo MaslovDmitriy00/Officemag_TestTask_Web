@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Задание 4 — ОФИСМАГ</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style-task4-scheme.css" />
+</head>
+<body>
+  <header>
+    <h1>Задание 4</h1>
+    <p><a href="../index.html">← Назад к списку заданий</a></p>
+  </header>
+
+  <main>
+    <h2>Масоны Самсона</h2>
+    <div class="diagram-editor-container">
+    <div class="editor-toolbar">
+        <div class="instr-box" id="status-text">Редактировать схему</div>
+        
+        <div class="toolbar-group">
+            <div class="group-label">Блоки</div>
+            <button id="add-node">Создать блок</button>
+            <button id="mode-edit">Изменить текст блока</button>
+            <button id="mode-remove-node">Удалить блок</button>
+        </div>
+
+        <div class="toolbar-group">
+            <div class="group-label">Связи</div>
+            <button id="mode-arrow">Добавить стрелку</button>
+            <button id="mode-line">Добавить линию</button>
+            <button id="mode-delete-conn">Удалить связь</button>
+        </div>
+    </div>
+
+    <div class="diagram-canvas" id="canvas">
+        <svg id="svg-layer">
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#8a8e96" />
+                </marker>
+            </defs>
+        </svg>
+
+        <div id="n1" class="node" style="left: 60px; top: 60px;">Алликсаар</div>
+        <div id="n2" class="node" style="left: 60px; top: 620px;">Игорь Зверёк</div>
+        <div id="n3" class="node" style="left: 200px; top: 620px;">Антон Строй</div>
+
+        <div id="n4" class="node" style="left: 360px; top: 220px;">Станислав<br>Клитотехнис</div>
+
+        <div id="n5" class="node" style="left: 660px; top: 280px;">Людмила<br>Водолазская</div>
+        <div id="n6" class="node" style="left: 660px; top: 380px;">Ольга Боргдорф</div>
+        <div id="n7" class="node" style="left: 660px; top: 580px;">Сергей Брус</div>
+
+        <div id="n8" class="node" style="left: 1000px; top: 60px;">Ду Хаст<br>Вячеславович</div>
+        <div id="n9" class="node" style="left: 1000px; top: 140px;">Анастасия Ширинкина</div>
+        <div id="n10" class="node" style="left: 1000px; top: 220px;">Александр Троян</div>
+
+        <div id="n11" class="node" style="left: 1000px; top: 380px;">Дмитрий Возигнуй</div>
+        <div id="n12" class="node" style="left: 1000px; top: 540px;">Кристина Болтушкина</div>
+        <div id="n13" class="node" style="left: 1000px; top: 460px;">Максим Висюлькин</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Выполнил: Дмитрий Маслов</p>
+  </footer>
+
+  <script src="../js/task4.js"></script>
+</body>
+</html>

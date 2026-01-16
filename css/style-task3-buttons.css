@@ -1,0 +1,304 @@
+main {
+    font-family: Arial, 'Segoe UI', Tahoma, sans-serif;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ui-grid {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    gap: 15px 20px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.bottom-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Базовый стиль кнопки */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    min-width: 102px;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    user-select: none;
+    transition: all 0.1s ease;
+    border: none;
+    padding: 0 12px;
+    position: relative;
+}
+
+/* Цвет фона */
+.btn--background-color-grey { background-color: #EBEBEB; }
+.btn--background-color-red { background-color: #CA130C; }
+.btn--background-color-green { background-color: #6E9735; }
+
+/* Цвет текста */
+.btn--text-color-black { color: #111111; }
+.btn--text-color-white { color: #FFFFFF; }
+
+/* Цвет обводки */
+.btn--outline-color-grey { border-color: #AFAFAF; }
+.btn--outline-color-red { border-color: #DC241F; }
+.btn--outline-color-green { border-color: #6E9735; }
+
+/* Толщина обводки */
+.btn--outline-0px { border-width: 0; }
+.btn--outline-1px { border-width: 1px; }
+.btn--outline-2px { border-width: 2px; }
+
+/* Тип обводки */
+.btn--outline-0px { border-style: solid; }
+.btn--outline-1px,
+.btn--outline-2px { border-style: solid; }
+
+/* Кнопка с красной стрелкой */
+.btn--arrow {
+    padding: 0 8px 0 10px;
+    display: flex;
+    gap: 4px;
+}
+
+.btn--arrow svg {
+    flex-shrink: 0;
+    width: 4px;
+    height: 8px;
+}
+
+.btn--arrow path {
+    fill: #DC241F;
+}
+
+/* Кнопка с иконкой слева */
+.btn--with-icon-left {
+    padding: 12px;
+}
+
+.btn--with-icon-left svg {
+    height: 14px;
+    width: auto;
+    margin-right: 8px;
+    fill: currentColor;
+}
+
+/* --- СОСТОЯНИЯ --- */
+
+/* Hover */
+.btn--background-color-grey:hover,
+.btn--background-color-grey.is-hover { background-color: #F4F4F4; }
+
+.btn--background-color-red:hover,
+.btn--background-color-red.is-hover { background-color: #E83029; }
+
+.btn--background-color-green:hover,
+.btn--background-color-green.is-hover { background-color: #85B444; }
+
+/* Pressed */
+.btn--background-color-grey:active,
+.btn--background-color-grey.is-pressed { background-color: #E1E1E1; }
+
+.btn--text-color-black:active,
+.btn--text-color-black.is-pressed { color: #4c4c4c; }
+
+.btn--background-color-red:active,
+.btn--background-color-red.is-pressed { background-color: #A9120C; }
+
+.btn--text-color-white:active,
+.btn--text-color-white.is-pressed { color: #edc2c2; }
+
+.btn--background-color-green:active,
+.btn--background-color-green.is-pressed { background-color: #5E822B; }
+
+.btn--text-color-white:active,
+.btn--text-color-white.is-pressed { color: #e1f0cd; }
+
+/* Arrow pressed */
+.btn--arrow:active path,
+.btn--arrow.is-pressed path { fill: #A95E5C; }
+
+/* Disabled */
+.btn:disabled,
+.btn.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+/* Disabled: специфичные стили для обводки и стрелки */
+.btn--outline-color-red:disabled,
+.btn--outline-color-red.is-disabled { border-color: #AFAFAF; }
+
+.btn--outline-color-green:disabled,
+.btn--outline-color-green.is-disabled { border-color: #AFAFAF; }
+
+.btn--arrow:disabled path,
+.btn--arrow.is-disabled path { fill: #4c4c4c; }
+
+/* Сброс стилей для иконок в disabled */
+.btn--with-icon-left:disabled svg,
+.btn--with-icon-left.is-disabled svg { fill: currentColor; }
+
+
+
+/* --- СТИЛИ ДЛЯ КОНСТРУКТОРА --- */
+.customizer-section {
+  width: 100%;
+  max-width: 600px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.customizer-layout {
+  display: flex;
+  gap: 30px;
+}
+
+.preview-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+.controls-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 250px;
+}
+
+/* --- КНОПКА --- */
+.universal-btn {
+  /* Переменные */
+  --btn-bg: #EBEBEB;
+  --btn-text: #111;
+  --btn-border: #AFAFAF;
+  --btn-border-width: 2px;
+  --btn-radius: 4px;
+  --btn-arrow-color: #DC241F;
+
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: var(--btn-border-width) solid var(--btn-border);
+  border-radius: var(--btn-radius);
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 8px;
+  line-height: 1;
+}
+
+#btnText {
+  padding-top: 1px;
+}
+
+/* Иконки */
+.universal-btn svg {
+  height: 14px;
+  width: auto;
+  fill: currentColor;
+  vertical-align: middle;
+  display: inline-block
+}
+
+/* Красная стрелка справа*/
+.btn--icon-right svg path {
+  fill: var(--btn-arrow-color);
+}
+
+.btn--icon-right svg {
+  flex-shrink: 0;
+  width: 4px;
+  height: 8px;
+}
+
+/* --- СОСТОЯНИЯ --- */
+/* Hover */
+.universal-btn:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+
+/* Active/Pressed */
+.universal-btn:active:not(:disabled) {
+  filter: brightness(0.85);
+}
+
+/* Disabled: */
+.universal-btn:disabled {
+    /* border-color: var(--btn-border); */
+    border-color: #AFAFAF;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.universal-btn:disabled .btn--icon-right svg path {
+  fill: #757575;
+}
+
+/* ИНПУТЫ ПАНЕЛИ */
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px
+}
+
+input[type="color"] {
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.field {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+/* Чекбоксы */
+input[type="checkbox"] {
+  margin-right: 4px;
+  vertical-align: middle;
+}

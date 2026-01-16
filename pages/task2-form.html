@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Задание 2 — ОФИСМАГ</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style-task2-form.css" />
+</head>
+<body>
+  <header>
+    <h1>Задание 2: Форма</h1>
+    <p><a href="../index.html">← Назад к списку заданий</a></p>
+  </header>
+
+  <main>
+    <div class="page">
+
+        <header class="page-header">
+            <h1>Заполните поля</h1>
+            <span class="please"><strong>ну пожалуйста</strong></span>
+        </header>
+
+        <form class="form-card">
+            <div class="form-sections">
+                <section class="section">
+                    <div class="section-content">
+                        <div class="grid-container">
+                            <h2>Основное</h2>
+                            <label>Имя</label>
+                            <input type="text" placeholder="по паспорту">
+                            <label>Цвет вашего настроения</label>
+                            <input type="color" value="#0000ff">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-yellow">
+                    <div class="section-content">
+                        <div class="grid-container-yellow">
+                            <h2>Дополнительное</h2>
+                            <label>Комментарий</label>
+                            <textarea placeholder="Напишите хоть что-нибудь.&#10;Если хотите, конечно."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-bottom">
+                    <div class="section-content">
+                        <div class="grid-container-controls">
+                            <div class="controls">
+                                <div class="radio-row">
+                                    <input type="radio" name="radio">
+                                    <label>Ну а тут просто полежит радиобатон</label>
+                                </div>
+
+                                <div class="checkbox-row">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked/>
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-text">
+                                        Соглашаюсь на всё, что бы вы не придумали и осознаю,
+                                        что это может означать <a href="#">что угодно</a>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="submit-button">
+                                Отправить все мои данные
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </form>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Выполнил: Дмитрий Маслов</p>
+  </footer>
+</body>
+</html>

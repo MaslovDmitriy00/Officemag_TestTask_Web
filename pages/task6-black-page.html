@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru" style="background: url('../images/27685708057_b6bdb65f3c_o.webp') no-repeat 50% 0; background-size: cover;">
+<!--- Заменил lang="en" на lang="ru" (семантически корректно для русского текста) -->
+<!--- Конвертировал фоновое изображение из .bmp в .webp и переместил в папку /images -->
+<!--- Добавил background-size: cover -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--- Заменил width=1920 на стандартный responsive viewport -->
+
+    <title>Pineapplepen - скоро открытие</title>
+    <!--- Исправил опечатки: "скороо ткрытие" на "скоро открытие" -->
+    <!--- Убрал лишние дефисы в комментарии -->
+
+    <!-- Стили были подключены в конце body, а скрипты здеь. Поменял местами -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/sticky-footer/sticky-footer.css">
+
+    <style>
+        /* Удалил: * * * { display: grit !important !important; } 
+           Причина: 'grit' - опечатка (должно быть grid), но даже при исправлении
+           такое правило ломает верстку Bootstrap, применяя grid ко всем элементам
+           тройной вложенности. Это вызывает неожидаемое поведение и "странный вид".
+        */
+
+        html {
+            /* Убрал overflow-y: hidden - оно мешало прокрутке,
+               если контент не помещается на экране */
+            overflow-x: hidden;
+            /* Заменил position: absolute top 10px (некорректный синтаксис)
+               на height: 100% для корректной работы sticky footer */
+            height: 100%;
+        }
+
+        /* Удалил: html > *:last-child { background: red; background: #ffffff00; }
+           Причина - это правило не имело визуального эффекта (второй background перекрывал первый),
+           а сам селектор слишком непредсказуемый. */
+
+        body {
+            /* Явно задан прозрачный фон для body, чтобы не конфликтовал с фоном html */
+            background-color: transparent;
+        }
+
+        /* Удалено дублирование свойств background  */
+        html body .bg-light {
+            /* Заменил полностью прозрачный фон rgba(0,0,0,0) на полупрозрачный белый,
+               чтобы текст внутри был читаемым на тёмном фоне */
+            background: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        /* Исправление цветов для читаемости на темном фоне */
+        .text-muted {
+            /* Унифицировал цвет текста в футере - был написан как "colour", что невалидно. Поменял значение на более читаемое */
+            color: #ccc !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Удалил закомментированную навигационная панель с ироничными ссылками (Хоть я и согласен с парой тезисов) -->
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="display: block;">
+    <!--- Заменил <span> на <div> - span не должен содержать блочные элементы (.col-md-5 это вроде адаптивный блок) -->
+    <!--- Исправил опечатку в стиле: display: inline=block на display: block -->
+    <!--- Убрал лишние переносы строк и пробелы в атрибутах -->
+
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+
+            <div class="display-4 font-weight-normal">Pineapplepen</div>
+
+            <div class="lead font-weight-normal">Вам придётся постараться, чтобы забыть то, что увидите здесь.</div>
+            <!--- Исправлена грамматика и опечатки: "Нужно будет постораться Вам чтобы забыт то что увидете зедсь" -->
+        </div>
+
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        <!--- Исправлена опечатка в атрибуте: clas="..." на class="..." -->
+    </div>
+
+    <footer class="footer" style="background: transparent;">
+        <!--- Исправлена опечатка: transparant на transparent -->
+
+        <div class="container">
+            <span class="text-muted" style="color:#ccc; text-align: center; display: block; position: relative; bottom: 14px;">
+            <!--- Исправил colour на color,  -->
+            <!--- Исправил centner на center -->
+            <!--- Добавлен display: block для корректного выравнивания текста -->
+            <!--- Упрощён отступ: bottom: 14.18px на 14px -->
+
+                Невероятный личностный опыт, восхитительное удовольствие.<br>
+                <!--- Добавил <br> для переноса строки перед ссылкой -->
+
+                <a href="#" style="display: inline-block; position: relative; top: -5px;">Pineapplepen</a>.
+                <!--- Исправил опечатки: displat на display, -ms-flex на inline-block -->
+                <!--- Упрощён стиль: object-fit и opacity не нужны для простой ссылки -->
+                <!--- Уменьшил смещение: top: -50.44px на -5px -->
+            </span>
+        </div>
+    </footer>
+
+    <!-- Скрипты перенесены в конец body (для производительности) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
